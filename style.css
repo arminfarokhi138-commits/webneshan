@@ -2563,3 +2563,115 @@ header {
     justify-content: center;
   }
 }
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navbar {
+    width: 100%;
+    min-height: 70px;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    gap: 12px;
+
+    justify-content: space-between;
+  }
+
+  .logo {
+    padding: 0;
+
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    height: 38px;
+    width: auto;
+  }
+
+  .navbar-content {
+    min-width: 0;
+    flex: 1;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    justify-content: flex-start;
+
+    scrollbar-width: none;
+  }
+
+  .navbar-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-content ul {
+    width: max-content;
+
+    flex-shrink: 0;
+
+    gap: 16px;
+
+    justify-content: flex-start;
+  }
+
+  .navbar-content a {
+    font-size: 12px;
+
+    white-space: nowrap;
+  }
+
+  .navbar-content a::after {
+    bottom: -6px;
+  }
+
+  .navbar-btn {
+    padding: 0;
+
+    flex-shrink: 0;
+  }
+
+  .navbar-btn .btn {
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
+   NAVBAR — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+  .navbar {
+    min-height: 64px;
+
+    padding: 0 10px;
+
+    gap: 8px;
+  }
+
+  .logo img {
+    height: 34px;
+  }
+
+  .navbar-content ul {
+    gap: 14px;
+  }
+
+  .navbar-content a {
+    font-size: 11px;
+  }
+
+  .navbar-btn .btn {
+    padding: 8px 10px;
+
+    font-size: 10px;
+  }
+}
