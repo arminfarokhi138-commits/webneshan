@@ -2916,3 +2916,153 @@ header {
     min-height: 44px;
   }
 }
+/* =========================================
+   TABLET / SMALL LAPTOP
+   769px تا 1100px
+========================================= */
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero-container {
+    min-height: 520px;
+    padding: 55px 5%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .hero-img {
+    width: 52%;
+    height: 100%;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-content {
+    width: 48%;
+    max-width: 500px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.5;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .hero-button {
+    gap: 10px;
+  }
+
+  .hero-button .btn,
+  .hero-button .btn-outline {
+    min-width: 125px;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+
+  .hero-icon {
+    padding: 8px 4px;
+  }
+
+  .hero-icon h4 {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .hero-icon span {
+    font-size: 10px;
+    white-space: normal;
+  }
+
+  /* =========================
+     SERVICES
+  ========================= */
+
+  .services {
+    max-width: 1100px;
+    padding: 75px 5%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    direction: ltr;
+  }
+
+  /* عنوان و توضیحات سمت راست */
+  .services-title {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .services-container {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+  }
+
+  .services-container h2 {
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .services-container p {
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  /* چهار کارت سمت چپ، 2 در 2 */
+
+  .services-card:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .services-card:nth-of-type(4) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .services-card:nth-of-type(5) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .services-card:nth-of-type(6) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .services-card {
+    width: 100%;
+    height: 190px;
+    min-width: 0;
+    padding: 24px 18px;
+    box-sizing: border-box;
+  }
+
+  .services-card h4 {
+    font-size: 17px;
+  }
+
+  .services-card span {
+    max-width: 190px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+}
