@@ -666,11 +666,23 @@ header {
 
   transition: var(--transition);
 }
+.portfolio-image-link {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
 
-/* =========================================================
-   PORTFOLIO IMAGE
-========================================================= */
+.portfolio-image-link img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
 
+.portfolio-image-link:hover img {
+  transform: scale(1.03);
+}
 .portfolio-card img {
   display: block;
 
@@ -2480,5 +2492,287 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+  width: 100%;
+  padding: var(--section-padding) 4%;
+  background: var(--background-dark);
+  box-sizing: border-box;
+  direction: rtl;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  opacity: 0.12;
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-content {
+  text-align: right;
+}
+
+.contact-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--primary-light);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.contact-label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(108, 59, 255, 0.8);
+}
+
+.contact-content h2 {
+  margin: 0 0 20px;
+  color: var(--text-white);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+.contact-content h2 span {
+  display: block;
+  color: var(--primary-light);
+}
+
+.contact-content > p {
+  max-width: 620px;
+  margin: 0 0 35px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: var(--text-md);
+  line-height: 2;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.contact-item {
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108, 59, 255, 0.45);
+  background: rgba(108, 59, 255, 0.08);
+}
+
+.contact-item > i {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  font-size: 21px;
+  background: rgba(108, 59, 255, 0.12);
+  border: 1px solid rgba(108, 59, 255, 0.2);
+  border-radius: 12px;
+}
+
+.contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+}
+
+.contact-item span {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: var(--text-xs);
+}
+
+.contact-item strong {
+  color: var(--text-white);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  direction: ltr;
+}
+
+/* Contact Card */
+
+.contact-card {
+  position: relative;
+  padding: 45px 35px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3),
+    0 0 50px rgba(108, 59, 255, 0.08);
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    var(--primary-light),
+    transparent
+  );
+}
+
+.contact-card-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  font-size: 30px;
+  background: var(--primary);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(108, 59, 255, 0.3);
+}
+
+.contact-card h3 {
+  margin: 0 0 14px;
+  color: var(--text-white);
+  font-size: var(--h4-size);
+}
+
+.contact-card p {
+  margin: 0 auto 28px;
+  max-width: 360px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--text-sm);
+  line-height: 2;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 22px;
+  color: var(--text-white);
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contact-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(108, 59, 255, 0.3);
+}
+
+/* =========================================================
+   CONTACT RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .contact-content {
+    text-align: center;
+  }
+
+  .contact-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-info {
+    justify-content: center;
+  }
+
+  .contact-card {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 70px 5%;
+  }
+
+  .contact-content h2 {
+    font-size: 30px;
+  }
+
+  .contact-content > p {
+    font-size: 14px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .contact-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contact-card {
+    padding: 35px 22px;
+  }
+
+  .contact-btn {
+    width: 100%;
   }
 }
