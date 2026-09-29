@@ -1184,133 +1184,183 @@ header {
   line-height: 2.1;
 }
 
-/* =========================================================
-   ABOUT CTA
-========================================================= */
-
 .about-us-cta {
-  position: relative;
-
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: right;
-
   direction: rtl;
 }
 
 .about-us-cta h2 {
-  margin: 0 0 18px;
-
+  width: 100%;
+  margin: 0 0 16px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
   color: var(--text-white);
-
-  font-size: var(--h2-size);
-
-  line-height: 1.5;
 }
 
 .about-us-cta > p {
+  width: 100%;
+  margin: 0 0 24px;
+  line-height: 2;
+  color: var(--text-white);
+}
+
+.about-us-cta > .btn-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  max-width: 100%;
+  min-height: 48px;
   margin: 0 0 28px;
-
-  color: rgba(255, 255, 255, 0.65);
-
-  font-size: var(--text-md);
-
-  line-height: 1.9;
+  padding: 12px 24px;
+  white-space: normal;
 }
 
-/* دکمه مشاوره */
+/* Contact items container */
 
-.about-us-cta .btn-2 {
-  display: inline-flex;
+.about-contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
 
+/* Individual contact item */
+
+.about-contact-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-
-  margin-bottom: 38px;
-
-  padding: 13px 24px;
-
-  color: var(--text-white);
-
-  background: var(--primary);
-
-  border: 1px solid var(--primary);
-
-  border-radius: var(--radius-sm);
-
-  font-size: var(--text-sm);
-  font-weight: 600;
-
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
   text-decoration: none;
-
-  transition: 0.3s ease;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-.about-us-cta .btn-2:hover {
-  background: var(--primary-dark);
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 10px 30px rgba(108, 59, 255, 0.3);
+.about-contact-item:hover {
+  background: rgba(108, 59, 255, 0.09);
+  border-color: rgba(108, 59, 255, 0.45);
+  transform: translateY(-3px);
 }
 
-/* =========================================================
-   ABOUT CONTACT INFO
-========================================================= */
+/* Contact icon */
 
-.about-us-cta > i {
-  width: 42px;
-  height: 42px;
-
-  margin-right: 12px;
-  margin-bottom: 8px;
-
-  display: inline-flex;
-
+.about-contact-icon {
+  display: flex;
   align-items: center;
   justify-content: center;
-
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
   color: var(--primary-light);
-
-  font-size: 21px;
-
-  background: rgba(108, 59, 255, 0.1);
-
-  border: 1px solid rgba(108, 59, 255, 0.18);
-
+  background: rgba(108, 59, 255, 0.12);
+  border: 1px solid rgba(108, 59, 255, 0.22);
   border-radius: 12px;
-
-  vertical-align: middle;
+  font-size: 22px;
 }
 
-.about-us-cta > h5 {
-  display: inline-block;
+/* Contact text */
 
-  margin: 0 25px 8px 0;
+.about-contact-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  text-align: right;
+}
 
+.about-contact-text strong {
   color: var(--text-white);
-
-  font-size: var(--text-sm);
+  font-size: 14px;
   font-weight: 600;
-
-  vertical-align: middle;
 }
 
-.about-us-cta > span {
-  display: inline-block;
-
-  margin-left: 35px;
-
-  color: var(--text-light);
-
-  font-size: var(--text-sm);
-
+.about-contact-text > span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  line-height: 1.7;
   direction: ltr;
-
-  vertical-align: middle;
+  text-align: right;
+  overflow-wrap: anywhere;
 }
 
-/* =========================================================
-   FAQ — سوالات متداول
-========================================================= */
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+  .about-us-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-us-cta {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-us-cta h2,
+  .about-us-cta > p {
+    text-align: center;
+  }
+
+  .about-contact-list {
+    max-width: 650px;
+    text-align: right;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+  .about-us {
+    padding: 55px 5%;
+  }
+
+  .about-team {
+    padding: 28px 22px;
+  }
+
+  .about-us-cta h2 {
+    font-size: clamp(23px, 6vw, 29px);
+    line-height: 1.8;
+  }
+
+  .about-us-cta > p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .about-us-cta > .btn-2 {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .about-contact-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .about-contact-item {
+    width: 100%;
+    padding: 13px;
+  }
+}
 
 .faq {
   width: 100%;
