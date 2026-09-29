@@ -2,10 +2,6 @@
   "use strict";
 
   function initWebNeshan() {
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
     const navbar = document.querySelector(".navbar");
     const navbarContent = document.querySelector(".navbar-content");
     const navbarButton = document.querySelector(".navbar-btn");
